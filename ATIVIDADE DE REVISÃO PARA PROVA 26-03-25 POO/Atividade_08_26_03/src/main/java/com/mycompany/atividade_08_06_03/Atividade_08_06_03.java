@@ -26,18 +26,18 @@ class Cinema{
         this.capacidade = capacidade;
         this.ingressosVendidos = ingressosVendidos;    
     }
-    public void venderIngresso(int quantidade,int ingressosVendidos,int capacidade){
+    public void venderIngresso(int quantidade){
         if(capacidade >= ingressosVendidos){
-             capacidade = capacidade - quantidade;
-             ingressosVendidos += ingressosVendidos;
+             capacidade -= quantidade;
+             ingressosVendidos += quantidade;
             System.out.println("Venda feita com SUCESSO!!!");
         }else{
             System.out.println("Não foi possivel concluir a venda!");
         }
     }
-    public void verificarDisponibilidade(int capacidade,int ingressosVendidos){
+    public void verificarDisponibilidade(){
         if(capacidade >= ingressosVendidos){
-            System.out.println("Existem "+(capacidade-ingressosVendidos)+" vagas Disponiveis!");
+            System.out.println("Existem "+(capacidade)+" vagas Disponiveis!");
         }else{
              System.out.println("VAGAS ESGOTADAS!!");
         }
@@ -67,12 +67,12 @@ public class Atividade_08_06_03 {
                 System.out.println("Informe a quantidade de Ingressos que deseja vender: ");
                 vendaING = LT.nextInt();
                 
-                cinemaVEND.venderIngresso(vendaING,cinemaVEND.ingressosVendidos,capacidadeSala);
+                cinemaVEND.venderIngresso(vendaING);
                 
             }
             
             if(menu == 2){
-                cinemaVEND.verificarDisponibilidade(capacidadeSala, vendaING);
+                cinemaVEND.verificarDisponibilidade();
             }    
             if(menu == 3){
                 x = false;

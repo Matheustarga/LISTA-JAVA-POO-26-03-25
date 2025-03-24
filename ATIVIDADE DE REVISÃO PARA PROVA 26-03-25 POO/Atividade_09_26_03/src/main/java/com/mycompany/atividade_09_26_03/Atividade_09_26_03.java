@@ -22,7 +22,7 @@ class Livros{
     String autor;
     boolean emprestado = false;
         
-        public Livros(String titulo,String autor){
+        public Livros(String titulo,String autor,boolean emprestado){
             this.autor = autor;
             this.titulo = titulo;
             this.emprestado = emprestado;
@@ -59,7 +59,7 @@ public class Atividade_09_26_03 {
             String nome1 = LT.nextLine();
             
             
-            Livros livro_1 = new Livros(nome1,autor1);
+            Livros livro_1 = new Livros(nome1,autor1,false);
             
             livro_1.emprestar();
             livro_1.exibir(nome1, autor1);
